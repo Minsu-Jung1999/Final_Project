@@ -5,25 +5,26 @@
  */
 
 #include <iostream>
+#include <random>
 #include "console.h"
 #include "gwindow.h"
+#include "Item.h"
+#include "Wood.h"
+#include "Water.h"
+#include "Rock.h"
+#include "House.h"
+#include "ItemGui.h"
+
 using namespace std;
 using namespace sgl;
-
-
-
-void simulation()
-{
-    GWindow* window = new GWindow(400, 400);
-    window->setTitle("Simulation");
-    window->setBackground("Green");
-}
 
 int main()
 {
     cout << "Animate? ";
     string choise;
     getline(cin, choise);
-    simulation();
+    ItemGUI gui;
+    gui.drawGrid();
+
     return 0;
 }
