@@ -1,0 +1,8 @@
+Implementation in progress.
+
+1) void ItemGUI::start()    
+2) void ItemGUI::loadClassesFromFile()
+
+Once we click the start button, the string "start" is expected to change to "tick" for the start() function.
+I also want you to  create an update function inside the ItemGUI class that updates the grid. 
+If a fire occurs, it changes the return value of the getColor function to red or something.
