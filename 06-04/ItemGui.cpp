@@ -23,6 +23,7 @@ ItemGUI::ItemGUI() :
     cols(20),
     width(20),
     height(20),
+    startButton(nullptr),
     tickButton(nullptr),
     saveButton(nullptr),
     loadButton(nullptr)
@@ -33,11 +34,15 @@ ItemGUI::ItemGUI() :
     window->setTitle("Simulation");
     window->setBackground("White");
     GridSetting();
+        
+    // Start Button
+    startButton = new GButton("start");
+    window->addToRegion(startButton, "EAST");
 
-    // Tick Button Or Start Button
-    tickButton = new GButton("start");
-    window->addToRegion(tickButton, "EAST");
-
+    // Tick Button
+    tickButton = new GButton("tick");
+    window->addToRegion(tickButton, "EAST");    
+        
     // Save Button
     saveButton = new GButton("Save");
     window->addToRegion(saveButton, "EAST");
@@ -46,11 +51,16 @@ ItemGUI::ItemGUI() :
     loadButton = new GButton("Load");
     window->addToRegion(loadButton, "EAST");
 
-    // Button Click Event
-    tickButton->setActionListener([this]() {
+    // Start Button Click Event
+    startButton->setActionListener([this]() {
         this->start();
     });
 
+    // Tick Button Click Event
+    tickButton->setActionListener([this]() {
+        this->update();
+    });
+        
     // Save Button Click Event
     saveButton->setActionListener([this]() {
         this->saveClassesToFile();
@@ -124,10 +134,27 @@ bool ItemGUI::isWindowOpen()
  */
 void ItemGUI::start()
 {
-    // Implementation in progress.
 
-    // just for the checking
-    cout<<"start() called" <<endl;
+    int randR = rand() % 20;
+    int randC = rand() % 20;
+    
+    grid[randR][randC] = new Fire(randR, randC);
+    
+    // am I supposed to write "this->drawGrid()" ?
+    drawGrid();
+    
+}
+
+/**
+ * @brief ItemGUI::update() updates the grid after each tick
+ */
+void ItemGUI::update(){
+    
+    //still working
+    // finds if the grid is a fire square,
+    // then spreads the fire to flammable adjacent squares
+    
+    drawGrid();
 }
 
 /**
