@@ -221,11 +221,14 @@ void ItemGUI::loadClassesFromFile()
     ifstream inputFile("classes.txt");
     inputFile.open();
     char temp;
+    string line;
     
     for (int row = 0; row < rows; ++row) {
+        line = inputFile.getLine();
         for (int col = 0; col < cols; ++col) {
             // find which item it is by checking if its a "F" or "W" etc
-            inputFile >> temp;
+            line[col] = temp;
+            //inputFile >> temp;
             if(temp=='F'){
                 grid[row][col] = new Fire(row, col);
             } else if (temp=='H'){
@@ -239,6 +242,8 @@ void ItemGUI::loadClassesFromFile()
             }
         }
     }
+    
+    drawGrid();
     
 }
 
