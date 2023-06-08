@@ -208,8 +208,27 @@ void ItemGUI::saveClassesToFile()
  */
 void ItemGUI::loadClassesFromFile()
 {
-    // Implementation in progress.
-    cout<<"loadClassesFromFile() called" <<endl;
-
+    ifstream inputFile("classes.txt");
+    inputFile.open();
+    char temp;
+    
+    for (int row = 0; row < rows; ++row) {
+        for (int col = 0; col < cols; ++col) {
+            // find which item it is by checking if its a "F" or "W" etc
+            inputFile >> temp;
+            if(temp=='F'){
+                grid[row][col] = new Fire(row, col);
+            } else if (temp=='H'){
+                grid[row][col] = new House(row, col);
+            } else if (temp=='R'){
+                grid[row][col] = new Rock(row, col);
+            } else if (temp=='W'){
+                grid[row][col] = new Water(row, col);
+            } else if (temp=='D'){
+                grid[row][col] = new Wood(row, col);
+            }
+        }
+    }
+    
 }
 
