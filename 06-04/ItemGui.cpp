@@ -141,7 +141,6 @@ void ItemGUI::start()
     
     grid[randR][randC] = new Fire(randR, randC);
     
-    // am I supposed to write "this->drawGrid()" ?
     drawGrid();
     
 }
@@ -155,22 +154,28 @@ void ItemGUI::update(){
     // then spreads the fire to flammable adjacent squares
     
     // creates a temporary grid to store edits in this tick call
-    vector<vector<int>> tempGrid = grid;
+    vector<vector<int>> tempGrid;
+     for(int r = 0; r<rows; r++){
+        for(int c = 0; c<cols; c++){
+            tempGrid[r][c].push_back(grid[r][c]);
+        }
+     }
+            
     vector<vector<int>> adjLocs;
     
     for(int r = 0; r<rows; r++){
         for(int c = 0; c<cols; c++){
             // check if the square is a fire item
-            if(grid[r][c].getColor()=="red"){
+            if(grid[r][c]->getColor()=="red"){
                 
-                adjLocs = grid[r][c].getAdjLocation();
+                adjLocs = grid[r][c]->getAdjLocation();
                 
                 for(int i = 0; i<4; i++){
                     int adjR = adjLocs[i][0];
                     int adjC = adjLocs[i][1];
                     
                     // if the adjacent square is flammable (wood or house), make it a fire item
-                    if(grid[adjR][adjC].getColor=="brown" || grid[adjR][adjC].getColor=="yellow"){
+                    if(grid[adjR][adjC]->getColor=="brown" || grid[adjR][adjC]->getColor=="yellow"){
                        tempGrid[adjR][adjC] = new Fire();
                     }
                 }
@@ -178,9 +183,14 @@ void ItemGUI::update(){
         }
     }
     
-    // not sure if this is the correct syntax
-    grid = tempGrid;
+    for(int r = 0; r<rows; r++){
+        for(int c = 0; c<cols; c++){
+            grid[r][c].push_back(tempGrid[r][c]);
+        }
+     }
+    
     drawGrid();
+    
 }
 
 /**
