@@ -13,6 +13,7 @@
 #include "Water.h"
 #include "Rock.h"
 #include "House.h"
+#include "Fire.h"
 
 using namespace sgl;
 using namespace std;
