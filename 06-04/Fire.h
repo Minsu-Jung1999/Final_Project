@@ -17,7 +17,7 @@ class Fire : public Item
 public:
     Fire(int x, int y);
     virtual std::string getColor() override;
-
+    virtual std::string toString() override;
 };
 
 #endif // FIRE_H
