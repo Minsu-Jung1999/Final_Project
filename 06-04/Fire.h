@@ -2,7 +2,7 @@
  * @brief Fire is red
  * @details NONE
  * @author Natalie Roberts, Minsu Jung
- * @date May/15/2023
+ * @date June/7/2023
  * @version NONE
  */
 #ifndef FIRE_H
