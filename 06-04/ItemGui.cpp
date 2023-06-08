@@ -150,10 +150,35 @@ void ItemGUI::start()
  */
 void ItemGUI::update(){
     
-    //still working
-    // finds if the grid is a fire square,
+    // finds if each square on the grid is a fire square,
     // then spreads the fire to flammable adjacent squares
     
+    // creates a temporary grid to store edits in this tick call
+    vector<vector<int>> tempGrid = grid;
+    vector<vector<int>> adjLocs;
+    
+    for(int r = 0; r<rows; r++){
+        for(int c = 0; c<cols; c++){
+            // check if the square is a fire item
+            if(grid[r][c].getColor()=="red"){
+                
+                adjLocs = grid[r][c].getAdjLocation();
+                
+                for(int i = 0; i<4; i++){
+                    int adjR = adjLocs[i][0];
+                    int adjC = adjLocs[i][1];
+                    
+                    // if the adjacent square is flammable (wood or house), make it a fire item
+                    if(grid[adjR][adjC].getColor=="brown" || grid[adjR][adjC].getColor=="yellow"){
+                       tempGrid[adjR][adjC] = new Fire();
+                    }
+                }
+            }
+        }
+    }
+    
+    // not sure if this is the correct syntax
+    grid = tempGrid;
     drawGrid();
 }
 
