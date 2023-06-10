@@ -1,6 +1,6 @@
 /**
  * @brief  House is a subclass of Item
- * @details NONE
+ * @details  House is a subclass of Item, but it is yellow and flammable
  * @author Natalie Roberts, Minsu Jung
  * @date May/15/2023
  * @version NONE
