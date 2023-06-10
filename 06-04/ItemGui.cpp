@@ -5,6 +5,7 @@
  * @date May/15/2023
  * @version NONE
  */
+
 #include "ItemGui.h"
 #include <fstream>
 #include "gwindow.h"
@@ -19,7 +20,7 @@ using namespace sgl;
 using namespace std;
 
 ItemGUI::ItemGUI() :
-    // Grid Settings
+    // Default Grid Settings
     rows(20),
     cols(20),
     width(20),
@@ -109,7 +110,9 @@ void ItemGUI::GridSetting()
 }
 
 /**
- * @brief ItemGUI::It iterates over each cell of the grid and sets the color properties of the window based on the color of the class object stored in that cell.
+ * @brief ItemGUI::It iterates over each cell of the grid
+ * and sets the color properties of the window 
+ * based on the color of the class object stored in that cell.
  */
 void ItemGUI::drawGrid()
 {
@@ -132,6 +135,7 @@ bool ItemGUI::isWindowOpen()
 
 /**
  * @brief start::When the Random Position Button is clicked, this function will be invoked.
+ * randomly assigns a fire item to one of the 400 squares in the grid
  */
 void ItemGUI::start()
 {
@@ -165,6 +169,7 @@ void ItemGUI::update(){
     
     for(int r = 0; r<rows; r++){
         for(int c = 0; c<cols; c++){
+            
             // check if the square is a fire item
             if(grid[r][c]->getColor()=="red"){
                 
@@ -228,7 +233,6 @@ void ItemGUI::loadClassesFromFile()
         for (int col = 0; col < cols; ++col) {
             // find which item it is by checking if its a "F" or "W" etc
             line[col] = temp;
-            //inputFile >> temp;
             if(temp=='F'){
                 grid[row][col] = new Fire(row, col);
             } else if (temp=='H'){
