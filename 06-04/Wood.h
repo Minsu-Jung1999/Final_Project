@@ -11,7 +11,8 @@
 #include "Item.h"
 #include <iostream>
 
-
+// Wood class extends Item and overrides getColor() and toString()
+// Wood objects are brown and flammable
 class Wood : public Item
 {
 public:
