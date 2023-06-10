@@ -1,5 +1,5 @@
 /**
- * @brief Water is blue
+ * @brief Water is blue and inflammable
  * @details NONE
  * @author Natalie Roberts, Minsu Jung
  * @date May/15/2023
@@ -11,7 +11,8 @@
 #include "Item.h"
 #include <iostream>
 
-
+// Constructs a Water object which is blue and inflammable
+// Extends the Item superclass
 class Water : public Item
 {
 public:
