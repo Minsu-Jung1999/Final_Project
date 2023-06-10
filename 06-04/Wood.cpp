@@ -1,6 +1,6 @@
 /**
  * @brief Wood is brown
- * @details NONE
+ * @details Wood is a subclass of item, but it is brown and flammable
  * @author Natalie Roberts, Minsu Jung
  * @date May/15/2023
  * @version NONE
