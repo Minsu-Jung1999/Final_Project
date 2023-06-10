@@ -1,5 +1,5 @@
 /**
- * @brief  House is a subclass of Wood (burns for 10 seconds)
+ * @brief  House is a subclass of Item 
  * @details NONE
  * @author Natalie Roberts, Minsu Jung
  * @date May/15/2023
