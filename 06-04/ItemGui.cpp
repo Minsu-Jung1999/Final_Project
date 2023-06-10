@@ -140,8 +140,8 @@ bool ItemGUI::isWindowOpen()
 void ItemGUI::start()
 {
 
-    int randR = rand() % 20;
-    int randC = rand() % 20;
+    int randR = rand() % rows;
+    int randC = rand() % cols;
     
     grid[randR][randC] = new Fire(randR, randC);
     
