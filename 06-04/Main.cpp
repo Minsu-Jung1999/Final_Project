@@ -24,11 +24,13 @@ using namespace sgl;
 int main()
 {
 
+    // prompts user if they want to run the simulation by asking "Animate?"
     cout << "Animate? ";
     string choise;
     getline(cin, choise);
 
 
+    // while the simulation runs, continue to run the simulation
     while(true)
     {
         cout<<"q to quick:";
