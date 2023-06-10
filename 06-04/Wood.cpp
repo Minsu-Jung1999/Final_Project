@@ -7,16 +7,21 @@
  */
 #include "Wood.h"
 
+// Constructs a Wood object which is brown and flammable
+// Extends the Item superclass
 Wood::Wood(int x, int y): Item(x,y)
 {
 
 }
 
+// Overrides the Item function and sets Wood's color to brown
 std::string Wood::getColor()
 {
     return "brown";
 }
 
+// Overrides the Item function and returns a D
+// (to differentiate from Water)
 std::string Wood::toString()
 {
     return "D";
