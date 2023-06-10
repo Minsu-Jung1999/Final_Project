@@ -11,6 +11,8 @@
 #include <iostream>
 #include <vector>
 
+
+// Item class respresents an item with a specified color, flammability, type, string representation, and adjacent locations
 class Item
 {
 private:
@@ -26,12 +28,9 @@ public:
     virtual std::string getType();  /* returns a string of the item’s name*/
     virtual std::string getColor(); /* returns a string of the item’s color*/
     virtual std::string toString(); /* returns a string referring to the item*/
-    virtual int getBurnTime();  /* returns the burnTime variable*/
-    virtual int getFireTime();  /* returns the fireTime variable*/
-    virtual bool isOnFire();    /* returns true if the item is currently on fire (capable of spreading fire, colored red, orange, or yellow)*/
     virtual int getX(); /* returns its x location*/
     virtual int getY(); /* returns its y location*/
-    virtual std::vector<std::vector<int>> getAdjLocation();   /* returns the location of the four adjacent positions */
+    virtual std::vector<std::vector<int>> getAdjLocation();   /* returns the locations of the four adjacent positions */
 
 
 };
