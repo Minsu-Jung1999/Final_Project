@@ -8,15 +8,20 @@
 #include <iostream>
 #include "House.h"
 
+// Constructs a House object with a location of an x and y value
+// Extends the Item superclass
 House::House(int x, int y) : Item(x,y)
 {
 
 }
 
+// Overrides the Item function and sets House's color to yellow
 std::string House::getColor()
 {
     return "yellow";
 }
+
+// Overrides the Item function and makes House's toString return an H
 std::string House::toString()
 {
     return "H";
