@@ -5,8 +5,11 @@
  * @date May/15/2023
  * @version NONE
  */
+
 #include "Item.h"
 #include <iostream>
+
+// constructs an item object at a coordinate location
 Item::Item(int x, int y)
 {
     location.push_back(x);
@@ -14,42 +17,44 @@ Item::Item(int x, int y)
 
 }
 
+// returns true if the item is flammable
 bool Item::isFlammable()
 {
     return true;
 }
+
+// returns a string representation of the item's type
 std::string Item::getType()
 {
     return "";
 }
+
+// returns the item's color
 std::string Item::getColor()
 {
     return "";
 }
+
+// returns a string representation of the item
  std::string Item::toString()
 {
     return "";
 }
-int Item::getBurnTime()
-{
-    return 0;
-}
-int Item::getFireTime()
-{
-    return 0;
-}
-bool Item::isOnFire()
-{
-    return true;
-}
+
+// returns the item's x value
 int Item::getX()
 {
     return location[0]; // return x
 }
+
+//returns the item's y value
 int Item::getY()
 {
     return location[1]; // return y
 }
+
+// returns the locations of the two, three, or four adjacent squares of a current square
+// returns a vector of two, three, or four vectors containing <row, col> values
 std::vector<std::vector<int>> Item::getAdjLocation()
 {
     /**
@@ -65,6 +70,7 @@ std::vector<std::vector<int>> Item::getAdjLocation()
      * bottom edge locations have location0, location1, location3
      * left edge locations have location0, location1, location2
      */
+    
     int currentR = location[0];
     int currentC = location[1];
 
