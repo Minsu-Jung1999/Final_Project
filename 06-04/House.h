@@ -1,5 +1,5 @@
 /**
- * @brief  House is a subclass of Wood (burns for 10 seconds)
+ * @brief  House is a subclass of Item
  * @details NONE
  * @author Natalie Roberts, Minsu Jung
  * @date May/15/2023
@@ -11,7 +11,7 @@
 #include <iostream>
 #include "Item.h"
 
-
+// House class extends Item and overrides getColor() and toString()
 class House : public Item
 {
 private:
@@ -21,6 +21,7 @@ public:
 
     /* returns its color */
     virtual std::string getColor() override;
+    /* returns a string representation */
     virtual std::string toString() override;
 
 };
