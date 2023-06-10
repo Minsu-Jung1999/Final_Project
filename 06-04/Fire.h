@@ -12,6 +12,7 @@
 #include <iostream>
 
 
+// Fire class extends Item and overrides getColor() and toString()
 class Fire : public Item
 {
 public:
