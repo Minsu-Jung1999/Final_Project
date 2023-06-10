@@ -1,6 +1,6 @@
 /**
- * @brief Water is blue
- * @details NONE
+ * @brief Water 
+ * @details Water is a subclass of item, but it is blue and inflammable
  * @author Natalie Roberts, Minsu Jung
  * @date May/15/2023
  * @version NONE
