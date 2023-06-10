@@ -1,6 +1,6 @@
 /**
  * @brief Item cpp
- * @details NONE
+ * @details Items are objects with characteristics about fire, like flammability, color, and adjacent locations
  * @author Natalie Roberts, Minsu Jung
  * @date May/15/2023
  * @version NONE
