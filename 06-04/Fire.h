@@ -1,6 +1,6 @@
 /**
  * @brief Fire is red
- * @details NONE
+ * @details  Fire is a subclass of Item, but it is red and spreads fire
  * @author Natalie Roberts, Minsu Jung
  * @date June/7/2023
  * @version NONE
