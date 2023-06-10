@@ -1,6 +1,6 @@
 /**
  * @brief ItemGui makes window.
- * @details NONE
+ * @details creates an interactive GUI window containing a 20x20 grid of squares corresponding to Item objects
  * @author Natalie Roberts, Minsu Jung
  * @date May/15/2023
  * @version NONE
